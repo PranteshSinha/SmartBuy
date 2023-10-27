@@ -1,11 +1,12 @@
-import Product from "@/lib/models/product.model";
-import { connectToDB } from "@/lib/mongoose";
-import { generateEmailBody, sendEmail } from "@/lib/nodemailer/index";
-import { scrapeAmazonProduct } from "@/lib/scraper/index";
-import { getAveragePrice, getEmailNotifType, getHighestPrice, getLowestPrice } from "@/lib/utils";
-import { NextResponse } from "@/node_modules/next/server";
+import { NextResponse } from "next/server";
 
-export const maxDuration = 0 0 * * 0; // This function can run for a maximum of 300 seconds
+import { getLowestPrice, getHighestPrice, getAveragePrice, getEmailNotifType } from "@/lib/utils";
+import { connectToDB } from "@/lib/mongoose";
+import Product from "@/lib/models/product.model";
+import { scrapeAmazonProduct } from "@/lib/scraper";
+import { generateEmailBody, sendEmail } from "@/lib/nodemailer";
+
+export const maxDuration = 300; // This function can run for a maximum of 300 seconds
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
