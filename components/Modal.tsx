@@ -2,7 +2,7 @@
 
 import { FormEvent, Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import { addUserEmailToProduct } from 'lib/actions/index'
+import { addUserEmailToProduct } from '@/lib/actions/index'
 import Image from '@/node_modules/next/image'
 
 interface Props {
